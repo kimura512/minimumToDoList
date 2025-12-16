@@ -1,4 +1,156 @@
+
 *{
-    border: 1px solid #000;
+    margin: 1px;
+    color: #3b3b3b;
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+.column-container{
+    margin: 1px;
+    color: #1d1d1d;
+    background-color: transparent;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+
+h1{
+    background-color: #d4d4d4;
+    padding: 5px;
+    text-align: center;
+}
+
+.menu{
+    background-color: #d4d4d4;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    padding: 5px;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.add-input{
+    width: 43%;
+}
+.add-input:hover{
+    border: 1px solid #3b3b3b;
+}
+
+.add-button{
+    width: 10%;
+}
+.add-button:hover{
+    border: 1px solid #3b3b3b;
+}
+
+.filter-button{
+    width: 20%;
+}
+.filter-button:hover{
+    border: 1px solid #3b3b3b;
+}
+
+.sort-button{
+    width: 20%;
+}
+.sort-button:hover{
+    border: 1px solid #3b3b3b;
+}
+
+h4{
+    background-color:transparent;
+    border: 1px solid #7a7a7a;
     margin: 5px;
+    padding: 5px;
+    text-indent: 20px;
+}
+
+ul{    
+    list-style: none;
+    padding: 0;
+}
+
+li{
+    display: flex;
+    flex-direction: row;
+    gap: 1px;
+    padding: 0;
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+    min-height: 150px;
+    padding: 0px 0px 10px 0px;
+}
+.list-item{
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    padding: 0px;
+}
+.list-item-left-wrapper{
+    padding: 0px 0px 0px 10px;
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+}
+.list-item-right-wrapper{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    text-indent: 5px;
+}
+.list-item-status{
+    height: 100%;
+}
+.list-item-status:hover{
+    cursor: pointer;
+    border: 1px solid #000000;
+}
+.list-item-title{  
+    width: 100%;
+    text-indent: 5px;
+}
+.list-item-button{
+    min-width: 5%;
+    border: 1px solid #7a7a7a;
+}
+.list-item-button:hover{
+    border: 1px solid #000000;
+}
+.list-item-deadline{
+    width: 30%;
+}
+.list-item-description{
+    width: 100%;
+}
+
+.list.untouched{
+    background-color: #bd9898;
+}
+.list.in-progress{
+    background-color: #b1cbbe;
+}
+.list.completed{
+    background-color: #a5b8c1;
+}
+.list.completed :not(h4){
+    text-decoration: line-through;    
+}
+.list.archived{
+    background-color: #bfacc2;
+}
+.list.archived :not(h4){
+    text-decoration: line-through;    
+}
+
+
+/* お好みで速度だけ調整 */
+::view-transition-old(*),
+::view-transition-new(*) {
+  animation-duration: .4s;
 }
