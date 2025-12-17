@@ -1,0 +1,89 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  min-width: 320px;
+  max-width: 90vw;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.modal-title {
+  margin: 0 0 8px 0;
+  font-size: 1.25rem;
+  color: #1d1d1d;
+}
+
+.modal-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #3b3b3b;
+}
+
+.modal-input,
+.modal-select,
+.modal-textarea {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.modal-input:focus,
+.modal-select:focus,
+.modal-textarea:focus {
+  outline: none;
+  border-color: #666;
+}
+
+.modal-textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  justify-content: flex-end;
+}
+
+.modal-button-save,
+.modal-button-cancel {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.modal-button-save {
+  background: #4a7c59;
+  color: white;
+}
+
+.modal-button-save:hover {
+  background: #3d6a4a;
+}
+
+.modal-button-cancel {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.modal-button-cancel:hover {
+  background: #d0d0d0;
+}
+
