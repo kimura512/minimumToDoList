@@ -32,13 +32,19 @@ const getIconForStatus = (status: TodoStatus, props: IconProps) => {
 /** 優先度バッジ */
 const PriorityBadge: React.FC<{ priority: Priority }> = ({ priority }) => {
   if (priority === "none") return null;
+  const labels: Record<Priority, string> = {
+    high: "高",
+    medium: "中",
+    low: "低",
+    none: "",
+  };
   return (
     <span
       className="priority-badge"
       style={{ backgroundColor: PRIORITY_COLORS[priority] }}
-      title={`優先度: ${priority}`}
+      title={`優先度: ${labels[priority]}`}
     >
-      {priority === "high" ? "🔴" : priority === "medium" ? "🟡" : "🟢"}
+      {labels[priority]}
     </span>
   );
 };
