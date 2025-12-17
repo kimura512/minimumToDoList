@@ -23,6 +23,9 @@ importers:
       react-scripts:
         specifier: 5.0.1
         version: 5.0.1(@babel/plugin-syntax-flow@7.27.1(@babel/core@7.28.5))(@babel/plugin-transform-react-jsx@7.27.1(@babel/core@7.28.5))(@types/babel__core@7.20.5)(eslint@8.57.1)(react@18.2.0)(type-fest@0.21.3)(typescript@4.9.5)
+      sanitize.css:
+        specifier: ^13.0.0
+        version: 13.0.0
       ulid:
         specifier: ^3.0.2
         version: 3.0.2

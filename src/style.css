@@ -1,3 +1,4 @@
+@import url(sanitize.css);
 
 *{
     margin: 1px;
@@ -116,7 +117,7 @@ li{
     text-indent: 5px;
 }
 .list-item-button{
-    min-width: 5%;
+    min-width: 12%;
     border: 1px solid #7a7a7a;
 }
 .list-item-button:hover{
