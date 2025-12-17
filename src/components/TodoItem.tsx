@@ -1,9 +1,10 @@
+import { useState } from "react";
 import { IoMdRadioButtonOff } from "react-icons/io";
 import { CgPlayButtonO } from "react-icons/cg";
 import { IoRadioButtonOn } from "react-icons/io5";
 import { CiTrash, CiEdit } from "react-icons/ci";
 import type { ToDo, TodoStatus } from "../types";
-import { NEXT_STATUS } from "../types";
+import { NEXT_STATUS, STATUS_LABELS } from "../types";
 import { ExpandableText } from "./ExpandableText";
 
 /** アイコンコンポーネントの共通Props */
@@ -15,22 +16,46 @@ const RadioButtonOn = IoRadioButtonOn as React.ComponentType<IconProps>;
 const TrashIcon = CiTrash as React.ComponentType<IconProps>;
 const EditIcon = CiEdit as React.ComponentType<IconProps>;
 
-/** ステータスに応じたアイコンを返す */
+/** ステータスに応じたアイコンコンポーネントを返す */
+const getIconForStatus = (status: TodoStatus, props: IconProps) => {
+  switch (status) {
+    case "untouched":
+      return <RadioButtonOff {...props} />;
+    case "in-progress":
+      return <PlayButtonO {...props} />;
+    case "completed":
+    case "archived":
+      return <RadioButtonOn {...props} />;
+  }
+};
+
+/** ステータスアイコン（ホバーで次のステータスを表示） */
 const StatusIcon: React.FC<{
   status: TodoStatus;
   onClick: () => void;
 }> = ({ status, onClick }) => {
-  const iconProps = { className: "list-item-status", size: 20, onClick };
+  const [isHovered, setIsHovered] = useState(false);
+  const nextStatus = NEXT_STATUS[status];
+  const canTransition = nextStatus !== status;
 
-  switch (status) {
-    case "untouched":
-      return <RadioButtonOff {...iconProps} />;
-    case "in-progress":
-      return <PlayButtonO {...iconProps} />;
-    case "completed":
-    case "archived":
-      return <RadioButtonOn {...iconProps} />;
-  }
+  // 現在のステータスまたはホバー時は次のステータスを表示
+  const displayStatus = isHovered && canTransition ? nextStatus : status;
+  const iconProps = { className: "list-item-status", size: 20 };
+  const tooltipText = canTransition
+    ? `クリックで「${STATUS_LABELS[nextStatus]}」に変更`
+    : "これ以上変更できません";
+
+  return (
+    <span
+      className="status-icon-wrapper"
+      onClick={onClick}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      title={tooltipText}
+    >
+      {getIconForStatus(displayStatus, iconProps)}
+    </span>
+  );
 };
 
 type TodoItemProps = {

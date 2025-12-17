@@ -90,8 +90,8 @@ describe("TodoItem", () => {
         />
       );
 
-      const statusIcon = screen.getByRole("listitem").querySelector(".list-item-status");
-      await user.click(statusIcon!);
+      const statusIconWrapper = screen.getByRole("listitem").querySelector(".status-icon-wrapper");
+      await user.click(statusIconWrapper!);
 
       expect(mockOnUpdateStatus).toHaveBeenCalledWith("test-id-001", "in-progress");
     });
@@ -108,8 +108,8 @@ describe("TodoItem", () => {
         />
       );
 
-      const statusIcon = screen.getByRole("listitem").querySelector(".list-item-status");
-      await user.click(statusIcon!);
+      const statusIconWrapper = screen.getByRole("listitem").querySelector(".status-icon-wrapper");
+      await user.click(statusIconWrapper!);
 
       expect(mockOnUpdateStatus).toHaveBeenCalledWith("test-id-001", "completed");
     });
@@ -126,8 +126,8 @@ describe("TodoItem", () => {
         />
       );
 
-      const statusIcon = screen.getByRole("listitem").querySelector(".list-item-status");
-      await user.click(statusIcon!);
+      const statusIconWrapper = screen.getByRole("listitem").querySelector(".status-icon-wrapper");
+      await user.click(statusIconWrapper!);
 
       expect(mockOnUpdateStatus).toHaveBeenCalledWith("test-id-001", "archived");
     });
@@ -144,8 +144,8 @@ describe("TodoItem", () => {
         />
       );
 
-      const statusIcon = screen.getByRole("listitem").querySelector(".list-item-status");
-      await user.click(statusIcon!);
+      const statusIconWrapper = screen.getByRole("listitem").querySelector(".status-icon-wrapper");
+      await user.click(statusIconWrapper!);
 
       expect(mockOnUpdateStatus).not.toHaveBeenCalled();
     });

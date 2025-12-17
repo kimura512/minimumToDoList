@@ -105,12 +105,23 @@ li{
     width: 50%;
     text-indent: 5px;
 }
+.status-icon-wrapper{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+.status-icon-wrapper:hover{
+    transform: scale(1.2);
+}
 .list-item-status{
     height: 100%;
+    transition: opacity 0.15s ease;
 }
-.list-item-status:hover{
-    cursor: pointer;
-    border: 1px solid #000000;
+.status-icon-wrapper:hover .list-item-status{
+    opacity: 0.8;
 }
 .list-item-title{  
     width: 100%;
