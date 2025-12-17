@@ -10,6 +10,9 @@ const createTodo = (overrides: Partial<ToDo> = {}): ToDo => ({
   id: "test-id-001",
   title: "テストタスク",
   status: "untouched",
+  createdAt: new Date().toISOString(),
+  priority: "none",
+  tags: [],
   ...overrides,
 });
 
