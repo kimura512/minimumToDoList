@@ -126,7 +126,7 @@ export const TodoItem: React.FC<TodoItemProps> = ({
         <div className="todo-item-meta">
           {todo.deadline && (
             <span className={`deadline ${isOverdue ? "overdue" : ""}`}>
-              📅 {new Date(todo.deadline).toLocaleDateString("ja-JP")}
+              {new Date(todo.deadline).toLocaleDateString("ja-JP")}
             </span>
           )}
           {todo.tags && todo.tags.length > 0 && (

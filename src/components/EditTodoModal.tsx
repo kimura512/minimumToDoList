@@ -52,7 +52,7 @@ export const EditTodoModal: React.FC<EditTodoModalProps> = ({
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <h3 className="modal-title">📝 タスクを編集</h3>
+        <h3 className="modal-title">タスクを編集</h3>
 
         <div className="modal-section">
           <label className="modal-label">タイトル *</label>
@@ -142,7 +142,7 @@ export const EditTodoModal: React.FC<EditTodoModalProps> = ({
 
         <div className="modal-buttons">
           <button className="modal-button-save" onClick={handleSave}>
-            💾 保存
+            保存
           </button>
           <button className="modal-button-cancel" onClick={onClose}>
             キャンセル

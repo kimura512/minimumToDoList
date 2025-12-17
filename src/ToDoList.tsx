@@ -212,8 +212,7 @@ export default function ToDoListApp() {
     <div className="modern-todo-app">
       <header className="app-header">
         <h1 className="app-title">
-          <span className="app-icon">✨</span>
-          Modern To Do List
+          To Do List
         </h1>
         <div className="stats-bar">
           <div className="stat-item">
@@ -261,7 +260,7 @@ export default function ToDoListApp() {
             <input
               type="text"
               className="search-input"
-              placeholder="🔍 検索..."
+              placeholder="検索..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />

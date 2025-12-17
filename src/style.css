@@ -1,14 +1,12 @@
 @import url(sanitize.css);
 
 :root {
-  /* カラーパレット */
-  --primary: #6366f1;
-  --primary-dark: #4f46e5;
-  --secondary: #8b5cf6;
-  --success: #10b981;
-  --warning: #f59e0b;
-  --danger: #ef4444;
-  --info: #3b82f6;
+  /* カラーパレット - シンプルで実用的 */
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --success: #059669;
+  --warning: #d97706;
+  --danger: #dc2626;
   
   /* グレースケール */
   --gray-50: #f9fafb;
@@ -25,24 +23,21 @@
   /* 背景 */
   --bg-primary: #ffffff;
   --bg-secondary: #f9fafb;
-  --bg-tertiary: #f3f4f6;
+  --bg-page: #f5f5f5;
   
   /* テキスト */
   --text-primary: #111827;
-  --text-secondary: #6b7280;
-  --text-tertiary: #9ca3af;
+  --text-secondary: #4b5563;
+  --text-tertiary: #6b7280;
   
-  /* シャドウ */
+  /* シャドウ - 控えめに */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
   
   /* ボーダー */
-  --border-radius: 12px;
-  --border-radius-sm: 8px;
-  --border-radius-lg: 16px;
+  --border-radius: 8px;
+  --border-radius-sm: 6px;
 }
 
 * {
@@ -53,141 +48,129 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--bg-page);
   min-height: 100vh;
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 /* メインアプリコンテナ */
 .modern-todo-app {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1.5rem;
   min-height: 100vh;
 }
 
-/* ヘッダー */
+/* ヘッダー - シンプルに */
 .app-header {
   background: var(--bg-primary);
-  border-radius: var(--border-radius-lg);
-  padding: 2rem;
-  margin-bottom: 2rem;
-  box-shadow: var(--shadow-xl);
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--gray-200);
 }
 
 .app-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
   display: flex;
   align-items: center;
-  gap: 1rem;
-  color: white;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  gap: 0.5rem;
 }
 
 .app-icon {
-  font-size: 3rem;
-  animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  font-size: 1.5rem;
 }
 
 .stats-bar {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
 }
 
 .stat-item {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(10px);
-  padding: 1rem 1.5rem;
-  border-radius: var(--border-radius);
+  background: var(--bg-secondary);
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius-sm);
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  min-width: 100px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--gray-200);
 }
 
 .stat-label {
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.95);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
   font-weight: 500;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .stat-value {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: white;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
 }
 
 /* コントロールパネル */
 .control-panel {
   background: var(--bg-primary);
-  border-radius: var(--border-radius-lg);
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  box-shadow: var(--shadow-lg);
+  border-radius: var(--border-radius);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--gray-200);
 }
 
 .input-group {
   display: flex;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .todo-input {
   flex: 1;
-  padding: 1rem 1.25rem;
-  border: 2px solid var(--gray-200);
-  border-radius: var(--border-radius);
-  font-size: 1rem;
-  transition: all 0.2s;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius-sm);
+  font-size: 0.9375rem;
+  transition: border-color 0.15s;
 }
 
 .todo-input:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
 .add-btn {
-  padding: 1rem 2rem;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  padding: 0.75rem 1.5rem;
+  background: var(--primary);
   color: white;
   border: none;
-  border-radius: var(--border-radius);
-  font-size: 1rem;
-  font-weight: 600;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.9375rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s;
-  box-shadow: var(--shadow-md);
+  transition: background-color 0.15s;
 }
 
 .add-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
+  background: var(--primary-dark);
 }
 
 .add-btn:active {
-  transform: translateY(0);
+  background: var(--primary-dark);
 }
 
 .filter-group {
   display: flex;
-  gap: 1rem;
+  gap: 0.75rem;
   flex-wrap: wrap;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .search-box {
@@ -197,30 +180,29 @@ body {
 
 .search-input {
   width: 100%;
-  padding: 0.75rem 1rem;
-  border: 2px solid var(--gray-200);
-  border-radius: var(--border-radius);
+  padding: 0.625rem 0.875rem;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius-sm);
   font-size: 0.875rem;
-  transition: all 0.2s;
+  transition: border-color 0.15s;
 }
 
 .search-input:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
 .filter-select,
 .sort-select {
-  padding: 0.75rem 1rem;
-  border: 2px solid var(--gray-200);
-  border-radius: var(--border-radius);
+  padding: 0.625rem 0.875rem;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius-sm);
   font-size: 0.875rem;
   background: white;
   color: var(--text-primary);
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: border-color 0.15s;
 }
 
 .filter-select option,
@@ -234,21 +216,20 @@ body {
 .sort-select:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
 /* タグフィルター */
 .tags-filter {
-  margin-top: 1rem;
-  padding-top: 1rem;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
   border-top: 1px solid var(--gray-200);
 }
 
 .tags-label {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   color: var(--text-secondary);
-  margin-right: 0.75rem;
+  margin-right: 0.5rem;
 }
 
 .tags-list {
@@ -259,99 +240,94 @@ body {
 }
 
 .tag-chip {
-  padding: 0.5rem 1rem;
-  border: 2px solid var(--gray-300);
-  border-radius: 20px;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid var(--gray-300);
+  border-radius: 16px;
   background: white;
   color: var(--text-primary);
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.15s;
 }
 
 .tag-chip:hover {
   border-color: var(--primary);
   background: var(--gray-50);
-  color: var(--primary);
 }
 
 .tag-chip.active {
   background: var(--primary);
   color: white;
   border-color: var(--primary);
-  font-weight: 600;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* リストコンテナ */
 .todo-lists-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
 }
 
 .list {
   background: var(--bg-primary);
-  border-radius: var(--border-radius-lg);
-  padding: 1.5rem;
-  box-shadow: var(--shadow-lg);
+  border-radius: var(--border-radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
   min-height: 200px;
+  border: 1px solid var(--gray-200);
 }
 
 .list h4 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  padding-bottom: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--gray-200);
   color: var(--text-primary);
 }
 
 .list.untouched h4 {
-  color: #dc2626;
+  color: var(--danger);
   border-bottom-color: #fee2e2;
 }
 
 .list.in-progress h4 {
-  color: #2563eb;
+  color: var(--primary);
   border-bottom-color: #dbeafe;
 }
 
 .list.completed h4 {
-  color: #059669;
+  color: var(--success);
   border-bottom-color: #d1fae5;
 }
 
 .list.archived h4 {
-  color: #7c3aed;
-  border-bottom-color: #ede9fe;
+  color: var(--gray-600);
+  border-bottom-color: var(--gray-200);
 }
 
 ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.625rem;
 }
 
-/* モダンなTodoアイテム */
+/* Todoアイテム - シンプルに */
 .modern-todo-item {
   background: var(--bg-secondary);
-  border: 2px solid var(--gray-200);
-  border-radius: var(--border-radius);
-  padding: 1.25rem;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius-sm);
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  transition: all 0.2s;
-  position: relative;
+  transition: border-color 0.15s;
 }
 
 .modern-todo-item:hover {
-  border-color: var(--primary);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  border-color: var(--gray-300);
 }
 
 .modern-todo-item.overdue {
@@ -363,38 +339,37 @@ ul {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
 .todo-item-header {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
 .todo-item-title {
-  font-size: 1.125rem;
-  font-weight: 600;
+  font-size: 0.9375rem;
+  font-weight: 500;
   color: var(--text-primary);
   flex: 1;
 }
 
 .priority-badge {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
+  font-size: 0.625rem;
   flex-shrink: 0;
 }
 
 .todo-item-description {
   color: var(--text-secondary);
-  font-size: 0.875rem;
-  line-height: 1.6;
-  font-weight: 400;
+  font-size: 0.8125rem;
+  line-height: 1.5;
 }
 
 .description-text {
@@ -404,9 +379,9 @@ ul {
 .todo-item-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 0.5rem;
   align-items: center;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
 }
 
 .deadline {
@@ -414,42 +389,41 @@ ul {
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .deadline.overdue {
   color: var(--danger);
-  font-weight: 700;
-  background: rgba(239, 68, 68, 0.1);
-  padding: 0.25rem 0.5rem;
-  border-radius: 6px;
+  font-weight: 600;
+  background: rgba(220, 38, 38, 0.1);
+  padding: 0.125rem 0.375rem;
+  border-radius: 4px;
 }
 
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.375rem;
 }
 
 .tag {
-  background: var(--primary);
-  color: white;
-  padding: 0.25rem 0.75rem;
+  background: var(--gray-200);
+  color: var(--text-primary);
+  padding: 0.125rem 0.5rem;
   border-radius: 12px;
   font-size: 0.75rem;
-  font-weight: 600;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  font-weight: 500;
 }
 
 .todo-item-actions {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.375rem;
   align-items: flex-start;
 }
 
 .action-btn {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   border: none;
   border-radius: var(--border-radius-sm);
   background: var(--gray-100);
@@ -458,16 +432,15 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s;
+  transition: background-color 0.15s;
 }
 
 .action-btn:hover {
   background: var(--gray-200);
-  transform: scale(1.1);
 }
 
 .edit-btn:hover {
-  background: var(--info);
+  background: var(--primary);
   color: white;
 }
 
@@ -482,96 +455,77 @@ ul {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: transform 0.15s ease;
+  transition: color 0.15s;
   color: var(--text-secondary);
 }
 
 .status-icon-wrapper:hover {
-  transform: scale(1.2);
   color: var(--primary);
 }
 
 .list-item-status {
-  transition: opacity 0.15s ease;
+  transition: opacity 0.15s;
 }
 
-/* モーダル */
+/* モーダル - シンプルに */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  animation: fadeIn 0.2s;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
 }
 
 .modal-content {
   background: white;
-  border-radius: var(--border-radius-lg);
-  padding: 2rem;
-  max-width: 600px;
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  max-width: 500px;
   width: 90%;
   max-height: 90vh;
   overflow-y: auto;
-  box-shadow: var(--shadow-xl);
-  animation: slideUp 0.3s;
-}
-
-@keyframes slideUp {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--gray-200);
 }
 
 .modal-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
   color: var(--text-primary);
 }
 
 .modal-section {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .modal-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .modal-label {
   display: block;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   color: var(--text-secondary);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.375rem;
 }
 
 .modal-input,
 .modal-select,
 .modal-textarea {
   width: 100%;
-  padding: 0.75rem 1rem;
-  border: 2px solid var(--gray-200);
-  border-radius: var(--border-radius);
+  padding: 0.625rem 0.875rem;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius-sm);
   font-size: 0.875rem;
   color: var(--text-primary);
   background: white;
-  transition: all 0.2s;
+  transition: border-color 0.15s;
 }
 
 .modal-select {
@@ -589,12 +543,11 @@ ul {
 .modal-textarea:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
 .modal-textarea {
   resize: vertical;
-  min-height: 100px;
+  min-height: 80px;
 }
 
 .tag-input-group {
@@ -608,15 +561,15 @@ ul {
 }
 
 .tag-add-btn {
-  padding: 0.75rem 1.5rem;
+  padding: 0.625rem 1rem;
   background: var(--primary);
   color: white;
   border: none;
-  border-radius: var(--border-radius);
-  font-size: 0.875rem;
-  font-weight: 600;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.8125rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: background-color 0.15s;
 }
 
 .tag-add-btn:hover {
@@ -625,38 +578,37 @@ ul {
 
 .modal-buttons {
   display: flex;
-  gap: 0.75rem;
+  gap: 0.5rem;
   justify-content: flex-end;
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
   border-top: 1px solid var(--gray-200);
 }
 
 .modal-button-save,
 .modal-button-cancel {
-  padding: 0.75rem 1.5rem;
+  padding: 0.625rem 1.25rem;
   border: none;
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-sm);
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: background-color 0.15s;
 }
 
 .modal-button-save {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  background: var(--primary);
   color: white;
-  box-shadow: var(--shadow-md);
 }
 
 .modal-button-save:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
+  background: var(--primary-dark);
 }
 
 .modal-button-cancel {
   background: var(--gray-100);
-  color: var(--text-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--gray-300);
 }
 
 .modal-button-cancel:hover {
@@ -666,7 +618,7 @@ ul {
 /* View Transition */
 ::view-transition-old(*),
 ::view-transition-new(*) {
-  animation-duration: 0.4s;
+  animation-duration: 0.3s;
 }
 
 /* レスポンシブ */
@@ -676,11 +628,11 @@ ul {
   }
   
   .app-title {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
   
   .stats-bar {
-    gap: 1rem;
+    gap: 0.75rem;
   }
   
   .todo-lists-container {
