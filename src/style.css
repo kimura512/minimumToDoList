@@ -85,7 +85,8 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .app-icon {
@@ -105,7 +106,7 @@ body {
 }
 
 .stat-item {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(10px);
   padding: 1rem 1.5rem;
   border-radius: var(--border-radius);
@@ -113,16 +114,21 @@ body {
   flex-direction: column;
   gap: 0.25rem;
   min-width: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .stat-label {
   font-size: 0.875rem;
-  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .stat-value {
   font-size: 1.5rem;
   font-weight: 700;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* コントロールパネル */
@@ -248,7 +254,9 @@ body {
   border: 2px solid var(--gray-300);
   border-radius: 20px;
   background: white;
+  color: var(--text-primary);
   font-size: 0.875rem;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -256,12 +264,15 @@ body {
 .tag-chip:hover {
   border-color: var(--primary);
   background: var(--gray-50);
+  color: var(--primary);
 }
 
 .tag-chip.active {
   background: var(--primary);
   color: white;
   border-color: var(--primary);
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* リストコンテナ */
@@ -373,7 +384,12 @@ ul {
 .todo-item-description {
   color: var(--text-secondary);
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.description-text {
+  color: var(--text-secondary);
 }
 
 .todo-item-meta {
@@ -389,11 +405,15 @@ ul {
   display: flex;
   align-items: center;
   gap: 0.25rem;
+  font-weight: 500;
 }
 
 .deadline.overdue {
   color: var(--danger);
-  font-weight: 600;
+  font-weight: 700;
+  background: rgba(239, 68, 68, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
 }
 
 .tags {
@@ -408,7 +428,8 @@ ul {
   padding: 0.25rem 0.75rem;
   border-radius: 12px;
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .todo-item-actions {
