@@ -217,8 +217,17 @@ body {
   border-radius: var(--border-radius);
   font-size: 0.875rem;
   background: white;
+  color: var(--text-primary);
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.2s;
+}
+
+.filter-select option,
+.sort-select option {
+  color: var(--text-primary);
+  background: white;
+  padding: 0.5rem;
 }
 
 .filter-select:focus,
@@ -560,7 +569,19 @@ ul {
   border: 2px solid var(--gray-200);
   border-radius: var(--border-radius);
   font-size: 0.875rem;
+  color: var(--text-primary);
+  background: white;
   transition: all 0.2s;
+}
+
+.modal-select {
+  cursor: pointer;
+}
+
+.modal-select option {
+  color: var(--text-primary);
+  background: white;
+  padding: 0.5rem;
 }
 
 .modal-input:focus,
